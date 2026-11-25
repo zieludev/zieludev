@@ -13,3 +13,6 @@ works.
 - **[rouvy-linux](https://github.com/zieludev/rouvy-linux)**: an unofficial launcher for the ROUVY
   indoor cycling app on Linux. One command boots a Windows VM, lends it your Bluetooth adapter and
   opens the app.
+- **[phantomwatts](https://github.com/zieludev/phantomwatts)**: a virtual Bluetooth LE smart trainer
+  (Fitness Machine, Cycling Power, Heart Rate) that needs no radio, for testing indoor cycling apps
+  in virtual machines and CI. New, at v0.1.
