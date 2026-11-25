@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-labelledby="title desc">
+  <title id="title">zieludev: indoor cycling on Linux</title>
+  <desc id="desc">The handle zieludev with a terminal cursor, above the power bars of an interval workout: a warm-up, steady riding, four hard intervals and a cool-down.</desc>
+  <style>
+    .panel  { fill: #151b23 }
+    .frame  { fill: none; stroke: #262e3a; vector-effect: non-scaling-stroke }
+    .bars   { fill: none; stroke-width: 16 }
+    .easy   { stroke: #2f3a4a }
+    .hard   { stroke: #ff8a3d }
+    .surge  { stroke: #ffb45e }
+    text    { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace }
+    .name   { fill: #f0f6fc; font-size: 107px; font-weight: 700 }
+    .tag    { fill: #9198a1; font-size: 42px }
+    .cursor { fill: #ff8a3d }
+
+    /* One pulse runs from the cursor through the intervals. Every frame of it is a complete picture, so a renderer that freezes the animation still shows a finished banner. */
+    .cursor, .interval { transform-box: fill-box; transform-origin: 50% 100% }
+    .cursor   { animation: tick .9s ease-out .8s }
+    .interval { animation: kick .9s ease-out }
+    .i1 { animation-delay: .94s }
+    .i2 { animation-delay: 1.08s }
+    .i3 { animation-delay: 1.22s }
+    .i4 { animation-delay: 1.36s }
+    @keyframes tick { 30% { transform: scaleY(1.14) } }
+    @keyframes kick { 30% { transform: scaleY(1.07) } }
+    @media (prefers-reduced-motion: reduce) { .cursor, .interval { animation: none } }
+  </style>
+  <clipPath id="clip"><rect width="1200" height="400" rx="16"/></clipPath>
+  <rect class="panel" width="1200" height="400" rx="16"/>
+
+  <!-- One bar is one power sample, 20 units apart. The first sample of each interval overshoots, as a rider does when ERG mode raises the target. -->
+  <g class="bars" clip-path="url(#clip)">
+    <path class="easy" d="M10 400V322M30 400V319M50 400V315M70 400V311M90 400V308M110 400V304M130 400V301M150 400V297M170 400V294M190 400V290M210 400V287M230 400V283M250 400V280M270 400V276"/>
+    <path class="easy" d="M290 400V273M310 400V271M330 400V274M350 400V270M370 400V272M390 400V275M410 400V271M430 400V273M450 400V270M470 400V272M490 400V274M510 400V271M530 400V273M550 400V269M570 400V272M590 400V274M610 400V271M630 400V273M650 400V270M670 400V272M690 400V274"/>
+    <path class="easy" d="M770 400V244M790 400V272M810 400V281M890 400V247M910 400V274M930 400V279M1010 400V242M1030 400V271M1050 400V282"/>
+    <path class="easy" d="M1130 400V252M1150 400V275M1170 400V298M1190 400V321"/>
+    <g class="interval i1"><path class="surge" d="M710 400V45"/><path class="hard" d="M730 400V69M750 400V72"/></g>
+    <g class="interval i2"><path class="surge" d="M830 400V48"/><path class="hard" d="M850 400V67M870 400V71"/></g>
+    <g class="interval i3"><path class="surge" d="M950 400V44"/><path class="hard" d="M970 400V72M990 400V69"/></g>
+    <g class="interval i4"><path class="surge" d="M1070 400V49"/><path class="hard" d="M1090 400V73M1110 400V80"/></g>
+  </g>
+  <rect class="frame" x="1" y="1" width="1198" height="398" rx="15"/>
+
+  <!-- textLength pins both lines to one width in any monospace font, and the font sizes give that width at 0.6 em per character for renderers that ignore it.
+       The cursor is as wide as an interval and one recovery away from the first: the same shape on the same grid. -->
+  <text class="name" x="56" y="154" textLength="514" lengthAdjust="spacing">zieludev</text>
+  <rect class="cursor" x="582" y="70" width="56" height="84"/>
+  <text class="tag" x="57" y="218" textLength="582" lengthAdjust="spacing">Indoor cycling on Linux</text>
+</svg>
