@@ -16,3 +16,6 @@ works.
 - **[phantomwatts](https://github.com/zieludev/phantomwatts)**: a virtual Bluetooth LE smart trainer
   (Fitness Machine, Cycling Power, Heart Rate) that needs no radio, for testing indoor cycling apps
   in virtual machines and CI. New, at v0.1.
+- **[tapirpost](https://github.com/zieludev/tapirpost)**: a small headless CMS in Go. One binary with
+  an HTTP API, SQLite or PostgreSQL, drafts and publishing, and an optional cache that does not
+  serve stale content. New, at v0.1.
